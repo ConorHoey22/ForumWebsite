@@ -2,7 +2,6 @@
 
 npm  i express express-validator
 
- 
 //encrypt password
 npm i bycryptjs
 
@@ -18,6 +17,18 @@ npm i request#
 //Node.js
 npm i -D nodemon concurrently
 
+//React 
+npx create-react-app my-app
+
+use concurrently to use react dev and nodejs server together 
+we can now run   , npm run dev 
+
+Moment is a date and time library , Redux and the rest are all api stuff and frontend
+
+npm i axios react-router-dom redux react-redux redux-thunk redux-devtools-extension moment react-moment
+
+proxy server create in package.json file , "proxy": "http://localhost:5000"
+
 Folders Info
 
 //config  
@@ -31,3 +42,8 @@ DB Schemas
 
 //routes / api
 API files
+
+
+
+
+
