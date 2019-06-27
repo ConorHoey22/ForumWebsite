@@ -1,0 +1,33 @@
+// Set up NPM Commmand
+
+npm  i express express-validator
+
+ 
+//encrypt password
+npm i bycryptjs
+
+// gravatar for image 
+npm i config gravatar jsonwebtoken
+
+//Mongoose for DB (MongoDB will be used) 
+npm i mongoose
+
+//Request
+npm i request#
+
+//Node.js
+npm i -D nodemon concurrently
+
+Folders Info
+
+//config  
+store DB code
+
+//middleware
+auth.js
+
+//models
+DB Schemas
+
+//routes / api
+API files
