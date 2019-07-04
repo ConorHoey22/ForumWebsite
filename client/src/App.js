@@ -13,6 +13,8 @@ import {
 import NavBar from './components/NavBar';
 import Homepage from './components/Homepage';
 import Footer from './components/Footer';
+import Register from './components/Register';
+import Login from './components/Login';
 // import About from './components/About';
 
 import './App.css';
@@ -25,6 +27,8 @@ function App() {
         <Router>
           <Switch>
             <Route exact path='/' component={Homepage} />
+            <Route path='/Register' component={Register} />
+            <Route path='/Login' component={Login} />
           </Switch>
         </Router>
       </header>

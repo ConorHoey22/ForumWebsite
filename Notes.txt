@@ -40,6 +40,12 @@ auth.js
 //models
 DB Schemas
 
+
+//User Validation
+UseState , API Validation
+
+
+
 //routes / api
 API files
 

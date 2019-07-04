@@ -1,18 +1,6 @@
 import React from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from 'reactstrap';
 
+import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
@@ -29,35 +17,33 @@ class NavBar extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar color='light' light expand='md'>
-          <NavbarBrand href='/'>Forum</NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className='ml-auto' navbar>
-              <NavItem>
-                <NavLink href='/components/'>Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href='https://github.com/reactstrap/reactstrap'>
-                  GitHub
-                </NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>Reset</DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            </Nav>
-          </Collapse>
-        </Navbar>
-      </div>
+      <nav class='navbar navbar-expand-lg navbar-light bg-light'>
+        <a class='navbar-brand' href='/'>
+          Forum
+        </a>
+        <button
+          class='navbar-toggler'
+          type='button'
+          data-toggle='collapse'
+          data-target='#navbarTogglerDemo02'
+          aria-controls='navbarTogglerDemo02'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+        >
+          <span class='navbar-toggler-icon' />
+        </button>
+
+        <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
+          <ul class='navbar-nav mr-auto mt-2 mt-lg-0'>
+            <li class='nav-item'>
+              <Link to='/Register'>Register</Link>
+            </li>
+            <li class='nav-item'>
+              <Link to='/Login'>Login</Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
     );
   }
 }

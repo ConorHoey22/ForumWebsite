@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose');
 
-//Image Attached to User
+/*Image Attached to User
 var ImageSchema = new mongoose.Schema({
   path: {
     type: String
@@ -26,7 +26,7 @@ var ImageSchema = new mongoose.Schema({
     //This may be used for user validation , Why the image failed moderation
     type: String
   }
-});
+});*/
 
 //User Schema and external Schemas
 const UserSchema = new mongoose.Schema({
@@ -43,14 +43,23 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  location: {
+    type: String,
+    required: true
+  },
+  country: {
+    type: String,
+    required: true
+  },
+
   avatar: {
     type: String
-  },
-  RegDate: {
+  }
+  /* RegDate: {
     type: Date,
     default: Date.now
-  },
-  ImageObject: [ImageSchema]
+  } */
+  // ImageObject: [ImageSchema] */
 });
 
 module.exports = User = mongoose.model('user', UserSchema);

@@ -6,6 +6,16 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const { check, validationResult } = require('express-validator/check');
 
+const bodyParser = require('body-parser');
+
+router.use(
+  bodyParser.urlencoded({
+    extended: true
+  })
+);
+
+router.use(bodyParser.json());
+
 //Call User Model
 const User = require('../../models/User');
 
@@ -26,6 +36,12 @@ router.post(
     check('email', 'Email is required')
       .not()
       .isEmpty(),
+    check('location', 'Location is required to help build your account')
+      .not()
+      .isEmpty(),
+    check('country', 'Country is required to help build your account')
+      .not()
+      .isEmpty(),
     check(
       'password',
       'Please enter a password. Your password must be 6 or more characters'
@@ -40,7 +56,7 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, email, password } = req.body;
+    const { name, email, location, country, password } = req.body;
 
     try {
       let user = await User.findOne({ email });
@@ -61,6 +77,8 @@ router.post(
       user = new User({
         name,
         email,
+        location,
+        country,
         avatar,
         password
       });

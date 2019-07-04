@@ -16,6 +16,7 @@ router.get('/', auth, async (req, res) => {
   try {
     //Get user model , requests userdata by user(ID) but we exclude the password
     const user = await User.findById(req.user.id).select('-password');
+
     res.json(user);
   } catch (err) {
     console.log(err.message);
@@ -71,6 +72,9 @@ router.post(
         payload,
         config.get('jwtSecretToken'),
         { expiresIn: 360000 }, //change expires in back to 3600 during production!!
+
+        // Send user to Dashboard?
+
         (err, token) => {
           if (err) throw err; // if error
           res.json({ token }); //if successful, it will return token
