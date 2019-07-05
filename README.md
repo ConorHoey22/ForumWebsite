@@ -21,7 +21,9 @@ Posts reducer:
 
 Alerts reducer: alerts
 
-Actions folder contains all actions
+Actions folder contains all actions 
+-types.js holds all constants(const) alerts
+-alert.js creats alerts and dispatch them with details
 
 
 
