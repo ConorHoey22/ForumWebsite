@@ -1,5 +1,8 @@
 # ForumWebsite
 
+
+Redux - app level state
+
 # API 
   Description
   Route Files
